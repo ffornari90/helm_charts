@@ -2,4 +2,4 @@ dependencies:
 
 - name: htcondor
   version: "2.1.13"
-  repository: https://dodas-ts.github.io/helm_charts
+  repository: https://ffornari90.github.io/helm_charts

@@ -1,5 +1,5 @@
 RELEASE ?= stable
-GH_PAGES ?= https://dodas-ts.github.io/helm_charts
+GH_PAGES ?= https://ffornari90.github.io/helm_charts
 COMMIT_MSG ?= "Doc update"
 
 CURRENT_BRANCH = "master" 
