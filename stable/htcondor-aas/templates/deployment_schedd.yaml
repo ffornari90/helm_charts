@@ -56,6 +56,10 @@ spec:
             mountPath: /home/uwdir/
           - name: hostcerts
             mountPath: /etc/certs
+{{- if .Values.nfs.enabled }}
+          - mountPath: "{{ .Values.nfs.path }}"
+            name: nfs
+{{- end }}
       volumes:
       - name: configd
         configMap:
@@ -77,6 +81,12 @@ spec:
       - name: spool
         persistentVolumeClaim:
           claimName: spool
+{{- if .Values.nfs.enabled }}
+      - hostPath:
+          path: "{{ .Values.nfs.path }}"
+          type: Directory
+        name: nfs
+{{- end }}
   selector:
     matchLabels:
       app.kubernetes.io/name: schedd

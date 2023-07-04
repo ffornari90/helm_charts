@@ -84,6 +84,10 @@ spec:
         - name: NUM_CPUS
           value: "{{ .Values.wn.siteConfCMS.numCPUS }}"
         volumeMounts:
+{{- if .Values.nfs.enabled }}
+          - mountPath: "{{ .Values.nfs.path }}"
+            name: nfs
+{{- end }}
           - name: cgroup
             mountPath: /sys/fs/cgroup
           {{- if not .Values.ttsCache.enabled }}
@@ -114,6 +118,12 @@ spec:
             mountPath: /root/proxy
           {{- end }}
       volumes:
+{{- if .Values.nfs.enabled }}
+      - hostPath:
+          path: "{{ .Values.nfs.path }}"
+          type: Directory
+        name: nfs
+{{- end }}
       - name: configd
         configMap:
           name: wnconfigd
