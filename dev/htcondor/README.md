@@ -13,7 +13,7 @@
 ### Quick Start
 
 ```bash
-helm repo add dodas https://dodas-ts.github.io/helm_charts
+helm repo add dodas https://ffornari90.github.io/helm_charts
 helm repo update
 helm install htcondor dodas/htcondor
 ```
