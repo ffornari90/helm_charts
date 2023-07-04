@@ -1,0 +1,69 @@
+{{- if or .Values.master.enabled .Values.schedd.enabled }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: submission-endpoint
+stringData:
+  collector-url: "{{ .Values.master.publicIP }}.myip.cloud.infn.it:30618"
+  schedd-url: "{{ .Values.master.publicIP }}.myip.cloud.infn.it"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ca-key-pair
+stringData:
+  tls.crt: |
+  tls.key: |
+
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: ca-issuer
+spec:
+  ca:
+    secretName: ca-key-pair
+---
+# define a CA to sign certificate
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: self-htc-issuer
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: htcondor-tls
+spec:
+  # Secret names are always required.
+  secretName: htcondor-tls
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  subject:
+    organizations:
+    - infn
+  # The use of the common name field has been deprecated since 2000 and is
+  # discouraged from being used.
+  commonName: {{ .Values.master.hostname }}
+  isCA: False
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048
+  dnsNames:
+  - {{ .Values.master.hostname }}
+  - master.{{ .Release.Namespace }}.svc.cluster.local
+  - "schedd.{{ .Release.Namespace }}.svc.cluster.local"
+  ipAddresses:
+    - {{ .Values.master.publicIP }}
+  # Issuer references are always required.
+  issuerRef:
+    name: ca-issuer
+    #name: self-htc-issuer
+    kind: Issuer
+    #name: letsencrypt-staging
+    #kind: ClusterIssuer
+
+{{- end }}
