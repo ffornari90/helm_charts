@@ -1,0 +1,6 @@
+dependencies:
+- name: reloader
+  repository: https://stakater.github.io/stakater-charts
+  version: v0.0.95
+digest: sha256:cd3efc06e0e6a77954141249bebe100903cab155aaf446c7127feee77c2ebfda
+generated: "2023-07-04T16:30:03.642821795+02:00"
