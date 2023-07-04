@@ -1,5 +1,0 @@
-dependencies:
-
-- name: htcondor
-  version: "2.1.13"
-  repository: https://ffornari90.github.io/helm_charts

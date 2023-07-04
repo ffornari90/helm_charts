@@ -1,14 +1,12 @@
-annotations:
-  category: stable
 apiVersion: v1
 appVersion: "1"
-description: A Helm chart for the deployment of multi-oidc-user MINIO+OPA as a Service
+description: A Helm chart for the deployment of multi-oidc-user MINIO+OPA
 name: minio
-version: 1.0.11
-icon: https://min.io/resources/img/logo/MINIO_Bird.png
+version: 1.0.0
+icon: https://xrootd.slac.stanford.edu/images/minio.png
 maintainers:
   - name: dciangot
     email: diego.ciangottini@pg.infn.it
   - name: spigad
     email: daniele.spiga@pg.infn.it
-home: https://ffornari90.github.io/helm_charts/stable/minio/
+home: https://dodas-ts.github.io/helm_charts/stable/minio/

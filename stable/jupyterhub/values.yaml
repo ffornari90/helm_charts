@@ -4,13 +4,11 @@
 
 iam:
     endpoint: https://iam.cloud.infn.it
-    oauth_sub: DUMMY
-    oauth_groups: DUMMY
-    oauth_admin_groups: DUMMY
 
 hub:
     host: localhost
-    image: dodasts/jhub:v0.0.9-jhub
+    port: 30888
+    image: dodasts/jupyter-hub:v3.0.0
 
 s3:
     endpoint: https://minio.cloud.infn.it/minio

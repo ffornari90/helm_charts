@@ -1,33 +1,46 @@
 apiVersion: v1
 entries:
-  XCache-aaS:
-  - annotations:
-      category: stable
-    apiVersion: v1
+  cachingondemand:
+  - apiVersion: v1
     appVersion: "4.11"
-    created: "2023-07-04T15:46:22.990147844+02:00"
+    created: "2023-07-04T16:23:39.327342404+02:00"
     description: A Helm chart for the deployment of a XCache cluster
-    digest: 1d8a8487a1fff4ea96bb9d974d6a711c586bc9f639a68fc3e00b4b97bccf0b62
-    home: https://ffornari90.github.io/helm_charts/stable/cachingondemand/
+    digest: f84ef77d506f69c06ef0c8dc2f673e0d54e87a3845efb1a9cb875cc8b6c649dd
+    home: https://dodas-ts.github.io/helm_charts/stable/cachingondemand/
     icon: https://xrootd.slac.stanford.edu/images/xrootd-logo.png
     maintainers:
     - email: diego.ciangottini@pg.infn.it
       name: dciangot
     - email: daniele.spiga@pg.infn.it
       name: spigad
-    name: XCache-aaS
+    name: cachingondemand
     urls:
-    - https://ffornari90.github.io/helm_charts/XCache-aaS-1.0.7.tgz
-    version: 1.0.7
+    - https://ffornari90.github.io/helm_charts/cachingondemand-1.0.5.tgz
+    version: 1.0.5
+  htcondor:
+  - apiVersion: v1
+    appVersion: 8.4.3
+    created: "2023-07-04T16:23:39.340273059+02:00"
+    description: A Helm chart for HTCondor on Kubernetes
+    digest: 57047376b6a1d9b92512ca414e228dc0670bf4cae7d29981b4f62ea68ab9f676
+    home: https://dodas-ts.github.io/helm_charts/stable/htcondor/
+    icon: https://research.cs.wisc.edu/htcondor/images/HTCondor_wiki_logo_small.png
+    maintainers:
+    - email: diego.ciangottini@pg.infn.it
+      name: dciangot
+    - email: daniele.spiga@pg.infn.it
+      name: spigad
+    name: htcondor
+    urls:
+    - https://ffornari90.github.io/helm_charts/htcondor-1.2.8.tgz
+    version: 1.2.8
   jupyterhub:
-  - annotations:
-      category: test
-    apiVersion: v1
+  - apiVersion: v1
     appVersion: "1"
-    created: "2023-07-04T15:46:22.385459404+02:00"
+    created: "2023-07-04T16:23:39.340706827+02:00"
     description: A Helm chart for the deployment of multi-user JupyterHUB
-    digest: d0e5c2e7157e9c38dd95a23b6e1197b71bffea85dfa922fe7d08c355e45a3711
-    home: https://ffornari90.github.io/helm_charts/stable/jupyterhub/
+    digest: c3b508da052223c042e6885b82cdef85131aa3f867ccc6d8f357de525429930b
+    home: https://dodas-ts.github.io/helm_charts/stable/jupyterhub/
     icon: https://xrootd.slac.stanford.edu/images/jupyterhub.png
     maintainers:
     - email: diego.ciangottini@pg.infn.it
@@ -36,6 +49,41 @@ entries:
       name: spigad
     name: jupyterhub
     urls:
-    - https://ffornari90.github.io/helm_charts/jupyterhub-1.2.4.tgz
-    version: 1.2.4
-generated: "2023-07-04T15:46:22.986803978+02:00"
+    - https://ffornari90.github.io/helm_charts/jupyterhub-1.1.0.tgz
+    version: 1.1.0
+  minio:
+  - apiVersion: v1
+    appVersion: "1"
+    created: "2023-07-04T16:23:39.341143783+02:00"
+    description: A Helm chart for the deployment of multi-oidc-user MINIO+OPA
+    digest: fdd2bda6a16e4b7ae74e1d1ef7084dec2c3156be477954992afc73a2ca43a221
+    home: https://dodas-ts.github.io/helm_charts/stable/minio/
+    icon: https://xrootd.slac.stanford.edu/images/minio.png
+    maintainers:
+    - email: diego.ciangottini@pg.infn.it
+      name: dciangot
+    - email: daniele.spiga@pg.infn.it
+      name: spigad
+    name: minio
+    urls:
+    - https://ffornari90.github.io/helm_charts/minio-1.0.0.tgz
+    version: 1.0.0
+  spark:
+  - apiVersion: v1
+    appVersion: 1.5.1
+    created: "2023-07-04T16:23:39.341747149+02:00"
+    description: Fast and general-purpose cluster computing system.
+    digest: ffe0fa85b86c0584d2d015ca6772bf78c9a162c288867deb9cdcef36a01d1a5e
+    home: http://spark.apache.org
+    icon: http://spark.apache.org/images/spark-logo-trademark.png
+    maintainers:
+    - email: tedesk95@gmail.com
+      name: ttedeschi
+    name: spark
+    sources:
+    - https://github.com/kubernetes/kubernetes/tree/master/examples/spark
+    - https://github.com/apache/spark
+    urls:
+    - https://ffornari90.github.io/helm_charts/spark-2.4.5.tgz
+    version: 2.4.5
+generated: "2023-07-04T16:23:39.323637838+02:00"
