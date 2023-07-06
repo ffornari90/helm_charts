@@ -186,8 +186,8 @@ cvmfs:
 
 # NFS mount on slave: configuration
 nfs:
-  enabled: false
-  path: ""
+  enabled: true
+  path: "/data"
 
 ttsCache:
   enabled: false
