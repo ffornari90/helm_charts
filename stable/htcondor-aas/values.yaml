@@ -184,6 +184,11 @@ cvmfs:
   #        property.1=value-1
   #        property.2=value-2
 
+# NFS mount on slave: configuration
+nfs:
+  enabled: true
+  path: "/data"
+
 ttsCache:
   enabled: false
   image: dodasts/tts-cache
