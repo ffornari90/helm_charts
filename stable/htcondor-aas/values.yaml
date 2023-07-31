@@ -20,7 +20,7 @@ schedd:
             - wn
         topologyKey: kubernetes.io/hostname  
   mapfile: |
-    SCITOKENS https:\/\/dodas-iam.cloud.cnaf.infn.it\/,(.*) \1@users.htcondor.org
+    SCITOKENS https:\/\/dodas-iam.cloud.cnaf.infn.it\/,(.*) condor
     PASSWORD (*.) condor
     GSI (.*) anonymous
   extraconfig: ""
